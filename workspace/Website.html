@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chemistry Reference</title>
+
+    <!--for 60 fonts hosted from Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Acme|Aldrich|Allan|Arvo|Audiowide|Baumans|Black+Ops+One|
+    Bungee+Inline|Bungee+Shade|Contrail+One|Creepster|Do+Hyeon|Electrolize|Faster+One|GFS+Didot|Geo|Graduate|Gruppo|
+    Hanuman|Herr+Von+Muellerhoff|Iceland|Inconsolata|Jockey+One|Julius+Sans+One|Kanit|Kelly+Slab|Krona+One|Lobster|
+    Lobster+Two|Magra|Marck+Script|Megrim|Mitr|Monoton|Montez|Montserrat+Subrayada|Niconne|Nova+Square|Orbitron|
+    Oregano|Pattaya|Philosopher|Pinyon+Script|Poiret+One|Preahvihear|Press+Start+2P|Prompt|Quantico|Racing+Sans+One|
+    Rye|Sarpanch|Share+Tech+Mono|Stardos+Stencil|Ubuntu|Unica+One|UnifrakturMaguntia|VT323|Vampiro+One|Yatra+One|
+    Yesteryear" rel="stylesheet">
+
+    <link rel="icon" type="imag/png" href="Images/atom.png" />
+
+    <script type="text" src="algorithms.js"></script>
+
+    <style>
+        body {
+            background-size: 20px 20px;
+            background-image: radial-gradient(circle, #8000d6 0.555px, black 2px);
+            /* I got the rgb codes at http://www.december.com/html/spec/colorcodes.html */
+            color: #54ffe5;
+            padding: 10px;
+            font-family: Electrolize;
+            position: inherit;
+            text-align: center;
+        }
+
+
+        h1 {
+            font-size: 5.2em;
+            font-weight: bold;
+            text-align: center;
+            line-height: 3.8em;
+            text-shadow: 0 0 5px #54ffe5, 0 0 10px #0000000, 0 0 15px #54ffe5;
+            animation: pulsate 3s ease-out infinite;
+        }
+
+        /*makes the title and the border around the title pulse a neon color*/
+
+        @-webkit-keyframes pulsate {
+            0% {
+                text-shadow: 0 0 0 #54ffe5;
+            }
+            50% {
+                text-shadow: 0 0 17px #54ffe5;
+            }
+            100% {
+                text-shadow: 0 0 0 #54ffe5;
+            }
+            0% {
+                text-shadow: 0 0 0 #54ffe5;
+            }
+            50% {
+                text-shadow: 0 0 17px #54ffe5;
+            }
+            100% {
+                text-shadow: 0 0 0 #54ffe5;
+            }
+            0% {
+                box-shadow: 0 0 30px #4cddf3;
+            }
+            25% {
+                box-shadow: 0 0 30px #8000d6;
+            }
+            50% {
+                box-shadow: 0 0 30px #52ee61;
+            }
+            75% {
+                box-shadow: 0 0 30px #8000d6;
+            }
+            100% {
+                box-shadow: 0 0 50px #ecbe59;
+            }
+            75% {
+                box-shadow: 0 0 30px #8000d6;
+            }
+            50% {
+                box-shadow: 0 0 30px #52ee61;
+            }
+            25% {
+                box-shadow: 0 0 30px #8000d6;
+            }
+            0% {
+                box-shadow: 0 0 30px #4cddf3;
+            }
+        }
+
+
+
+        p1 {
+            font-size: 2em;
+            font-family: Kanit;
+        }
+
+
+        @-webkit-keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+
+
+        /* The side navigation menu */
+
+        .sidenav {
+            height: 100%;
+            /* 100% Full-height */
+            width: 0;
+            /* 0 width - change this with JavaScript */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Stay on top */
+            top: 0;
+            left: 0;
+            background-color: #111;
+            /* Black*/
+            overflow-x: hidden;
+            /* Disable horizontal scroll */
+            padding-top: 60px;
+            /* Place content 60px from the top */
+            transition: 0.5s;
+            /* 0.5 second transition effect to slide in the sidenav */
+        }
+
+        /* The navigation menu links */
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 45px;
+            color: #818181;
+            display: block;
+            transition: 0.4s;
+        }
+
+        /* When you mouse over the navigation links, change color */
+
+        .sidenav a:hover {
+            color: #4cddf3;
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080;
+        }
+
+        /* Position and style the close button (top right corner) */
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        .sidenav {
+            position: fixed;
+            bottom: 100;
+            right: 100;
+            border: 5px #8000d6;
+            background-color: #000000;
+            opacity: .95;
+        }
+
+        .sidenavContent {
+            text-align: center;
+            font-family: Pinyon Script;
+        }
+
+
+
+        .menu {
+            display: inline-block;
+            border-radius: 25px;
+            background-color: #333333;
+            border-color: #8000d6;
+            color: #FFFFFF;
+            text-align: center;
+            text-shadow: 0 0 30px #8000d6, 0 0 45px #8000d6, 0 0 60px #8000d6, 0 0 75px #8000d6;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            animation: button 3s ease-out infinite;
+        }
+
+        .menu span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .menu span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.4s;
+        }
+
+        .menu:hover span {
+            padding-right: 25px;
+        }
+
+        .menu:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+
+
+        .sidenav2 {
+            height: 100%;
+            /* 100% Full-height */
+            width: 0;
+            /* 0 width - change this with JavaScript */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Stay on top */
+            top: 0;
+            left: 0;
+            background-color: #111;
+            /* Black*/
+            overflow-x: hidden;
+            /* Disable horizontal scroll */
+            padding-top: 60px;
+            /* Place content 60px from the top */
+            transition: 0.5s;
+            /* 0.5 second transition effect to slide in the sidenav */
+        }
+
+        /* The navigation menu links */
+
+        .sidenav2 a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.4s;
+        }
+
+        /* When you mouse over the navigation links, change color */
+
+        .sidenav2 a:hover {
+            color: #4cddf3;
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080;
+        }
+
+        /* Position and style the close button (top right corner) */
+
+        .sidenav2 .closebtn2 {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 26px;
+            margin-left: 50px;
+        }
+
+        .sidenav2 {
+            position: fixed;
+            bottom: 100;
+            right: 100;
+            border: 5px #8000d6;
+            background-color: #000000;
+            opacity: .95;
+        }
+
+        .sidenavContent2 {
+            text-align: center;
+            font-family: Black Ops One;
+        }
+
+
+        .credits {
+            display: inline-block;
+            border-radius: 25px;
+            background-color: #333333;
+            border-color: #8000d6;
+            color: #FFFFFF;
+            text-align: center;
+            text-shadow: 0 0 30px #8000d6, 0 0 45px #8000d6, 0 0 60px #8000d6, 0 0 75px #8000d6;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            position: center;
+            animation: button 3s ease-out infinite;
+        }
+
+        .credits span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .credits span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.4s;
+        }
+
+        .credits:hover span {
+            padding-right: 25px;
+        }
+
+        .credits:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+        @-webkit-keyframes button {
+            0% {
+                box-shadow: 0 0 30px #4cddf3;
+            }
+            25% {
+                box-shadow: 0 0 30px #8000d6;
+            }
+            50% {
+                box-shadow: 0 0 30px #52ee61;
+            }
+            75% {
+                box-shadow: 0 0 30px #8000d6;
+            }
+            100% {
+                box-shadow: 0 0 50px #ecbe59;
+            }
+            75% {
+                box-shadow: 0 0 30px #8000d6;
+            }
+            50% {
+                box-shadow: 0 0 30px #52ee61;
+            }
+            25% {
+                box-shadow: 0 0 30px #8000d6;
+            }
+            0% {
+                box-shadow: 0 0 30px #4cddf3;
+            }
+        }
+    </style>
+
+
+
+
+</head>
+
+
+
+<body>
+
+
+    <button class="menu"><span onClick="openNav()">Menu</span></button>
+    <button class="credits"><span onClick="openNav2()">Credits</span></button>
+
+    <h1>Chemistry Reference</h1>
+
+
+    <p1>
+        Welcome to the Chemistry Reference website created by:
+        <br> Jonah Delaney, Daniel Uwaifo, John Yu!
+        <br> This website contains many helpful tools to guide you when completing homework, studying, or tutoring/teaching.
+    </p1>
+
+
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a>
+
+        <div id="sidenavContent2" class="sidenavContent">
+            <a href="Periodic.html">Periodic Table of Elements Reference</a>
+            <a href="#"></a>
+            <!-- KEEP EMPTY -->
+            <a href="Polyatomic.html">Polyatomic Ions Reference</a>
+            <a href="#"></a>
+        </div>
+    </div>
+
+    <div id="mySidenav2" class="sidenav2">
+        <a href="javascript:void(0)" class="closebtn2" onclick="closeNav2()">&times;</a>
+        <div id="sidenavContent" class="sidenavContent2">
+
+
+            <p1>
+                <i> Team Name: Error 404 Cookies Not Found </i>
+                <br>
+                <br>
+                <i>Team Members:</i>
+                <br> Jonah Delaney
+                <br> John Yu
+                <br> Daniel Uwaifo
+                <br>
+                <br> Special thanks to: Mrs. Tanguis
+                <br> Thank you for all of your support and being our teacher sponsor!
+            </p1>
+
+
+        </div>
+    </div>
+
+
+    <script>
+        function openNav() { //for the menu button//
+            document.getElementById("mySidenav").style.width = "100%";
+            document.getElementById("main").style.marginLeft = "0%";
+        }
+        /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+        function closeNav() { //for the menu button//
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+
+        function openNav2() { //for the credits button//
+            document.getElementById("mySidenav2").style.width = "100%";
+            document.getElementById("main").style.marginRight = "0%";
+        }
+        /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+        function closeNav2() { //for the credits button//
+            document.getElementById("mySidenav2").style.width = "0";
+            document.getElementById("main").style.marginRight = "0";
+        }
+    </script>
+
+
+
+</body>
+
+</html>
